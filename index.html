@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bookshelf</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Farsan&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header class="navbar">
+  <section class="navbar_title"><h1 class="title"><i class="fa fa-book"></i>Bookshelf</h1></section>
+  <section class="navbar_search">  
+    <form id="search_book">
+      <label for="search_form"><i class="fa fa-search"></i></label>
+      <input id="search_form" type="text" placeholder="Search book title...">
+      <button id="submit_search" type="submit">Search</button>
+    </form>
+</section>
+</header>
+
+<main>
+  <section class="input_container">
+    <h2>Add New Book</h2>
+    <form id="input_book">
+      <div class="input">
+        <label for="input_title">Title</label>
+        <input id="input_title" type="text" required >
+      </div>
+      <div class="input">
+        <label for="input_author">Author(s)</label>
+        <input id="input_author" type="text" required >
+      </div>
+      <div class="input">
+        <label for="input_year">Year</label>
+        <input id="input_year" type="number" required >
+      </div>
+      <div class="input_inline">
+        <label for="input_is_complete">Finished</label>
+        <input id="input_is_complete" type="checkbox">
+      </div>
+      <button id="submit_book" type="submit">Add book to shelf</button>
+    </form>
+  </section>
+
+  
+  <section class="book_shelf">
+    <h2>Reading List</h2>
+    
+    <div id="reading_bookshelf" class="book_list">
+    </div>
+  </section>
+  
+  <section class="book_shelf">
+    <h2>Finished Reading</h2>
+    
+    <div id="finished_bookshelf" class="book_list">
+    </div>
+  </section>
+</main>
+<script src="add_item.js"></script>
+</body>
+</html>

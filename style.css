@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
+}
+h1{
+    margin: 0;
+}
+h2{
+    margin-top: 0;
+}
+button{
+    background-color:#fffbf7;
+    border: solid;
+    border-color: #bb9f6e;
+    border-radius: 0.5rem;
+    border-width: 0.1rem;
+    margin: 0 0.2rem 0 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.fa{
+    margin: 0 0.5rem 0 0;
+}
+.navbar{
+    align-items: center;
+    background-color: beige;
+    display: flex;
+    gap: 2rem;
+    padding: 0.5rem 4rem 0.5rem 4rem;
+    position: fixed;
+    -webkit-box-shadow: 1px 1px 10px 0px #a5995e80;
+    -moz-box-shadow: 1px 1px 10px 0px #a5995e80;
+    box-shadow: 1px 1px 10px 0px #a5995e80;
+    width: 100%;
+}
+.navbar_title{
+    display: flex;
+}
+.title{
+    font-family: 'Farsan'!important;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
+}
+.navbar_search{
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+#search_book{
+    width: 100%;
+}
+#search_form{
+    background-color:#fffbf7;
+    border: solid;
+    border-color: #bb9f6e;
+    border-radius: 0.5rem;
+    border-width: 0.1rem;
+    max-width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    width: 75%;
+}
+#input_title, #input_author, #input_year{
+    background-color:#fffbf7;
+    border: solid;
+    border-color: #bb9f6e;
+    border-radius: 0.5rem;
+    border-width: 0.1rem;
+    margin: 0.5rem 0 0 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    width: auto;
+}
+main{
+    padding: 5rem 2rem 1rem 2rem;
+}
+.input_container{
+    background-color:#fffbf7;
+    border: none;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 1px 1px 20px 0px #a7985260;
+    -moz-box-shadow: 1px 1px 20px 0px #a7985260;
+    box-shadow: 1px 1px 20px 0px #a7985260;
+    margin: 2rem auto 2rem auto;
+    max-width: 60rem;
+    padding: 2rem 2rem 2rem 2rem;
+}
+.input{
+    display: grid;
+    padding: 0 0 1rem 0;   
+}
+.input_inline{
+    padding: 0 0 1rem 0;
+}
+.book_shelf{
+    background-color:#fffbf7;
+    border: none;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 1px 1px 20px 0px #a7985260;
+    -moz-box-shadow: 1px 1px 20px 0px #a7985260;
+    box-shadow: 1px 1px 20px 0px #a7985260;
+    margin: 2rem auto 2rem auto;
+    max-width: 60rem;
+    padding: 2rem 2rem 2rem 2rem;   
+}
