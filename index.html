@@ -23,7 +23,7 @@
       <input id="search_form" type="text" placeholder="Search book title...">
       <button id="submit_search" type="submit">Search</button>
     </form>
-</section>
+  </section>
 </header>
 
 <main>
@@ -43,26 +43,28 @@
         <input id="input_year" type="number" required >
       </div>
       <div class="input_inline">
-        <label for="input_is_complete">Finished</label>
-        <input id="input_is_complete" type="checkbox">
+        <label for="input_isComplete">Finished</label>
+        <input id="input_isComplete" type="checkbox">
       </div>
       <button id="submit_book" type="submit">Add book to shelf</button>
     </form>
   </section>
 
   
-  <section class="book_shelf">
-    <h2>Reading List</h2>
+  <section id="shelf">
+    <section class="book_shelf">
+      <h2>Reading List</h2>
+      
+      <div id="reading_bookshelf" class="book_list">
+      </div>
+    </section>
     
-    <div id="reading_bookshelf" class="book_list">
-    </div>
-  </section>
-  
-  <section class="book_shelf">
-    <h2>Finished Reading</h2>
-    
-    <div id="finished_bookshelf" class="book_list">
-    </div>
+    <section class="book_shelf">
+      <h2>Finished Reading</h2>
+      
+      <div id="finished_bookshelf" class="book_list">
+      </div>
+    </section>
   </section>
 </main>
 <script src="add_item.js"></script>

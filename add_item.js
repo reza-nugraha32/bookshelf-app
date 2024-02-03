@@ -1,5 +1,6 @@
 const storage_key = 'STORAGE_KEY';
 const submit_book_data = document.getElementById('input_book');
+const search_book_data = document.getElementById('search_book');
 
 function check_for_storage() {
     return typeof (Storage) !== 'undefined';
@@ -37,13 +38,13 @@ function move_book_data(move_id){
         let book_data = [];
         if (localStorage.getItem(storage_key) !== null) {
             book_data = JSON.parse(localStorage.getItem(storage_key));
-            const index = book_data.findIndex(item => item.id === move_id);
+            const index = book_data.findIndex(item => item.id == move_id);
 
-            if (book_data[index].completed == true){
-                book_data[index].completed = false;
+            if (book_data[index].iscomplete == true){
+                book_data[index].iscomplete = false;
             }
             else{
-                book_data[index].completed = true;
+                book_data[index].iscomplete = true;
             }
             localStorage.setItem(storage_key, JSON.stringify(book_data));
         }
@@ -70,7 +71,7 @@ function render_control_button(book){
         render_book_list();
     };
 
-    if (book.completed !== true){
+    if (book.iscomplete !== true){
         move_button.innerHTML = 'Move to finished reading';
     }
     else{
@@ -101,7 +102,7 @@ function render_book_list() {
     finished_list.innerHTML = '';
 
     for (let book of book_data) {
-        if (book.completed !== true){
+        if (book.iscomplete !== true){
             let book_item = document.createElement('article');
             let book_title = document.createElement('h3');
             let book_author = document.createElement('p');
@@ -114,7 +115,7 @@ function render_book_list() {
             book_item.appendChild(book_title);
             book_item.appendChild(book_author);
             book_item.appendChild(book_year);
-            book_item.id = "Item-"+book.id;
+            book_item.id = book.id;
 
             reading_list.appendChild(book_item);
             
@@ -135,7 +136,7 @@ function render_book_list() {
             book_item.appendChild(book_title);
             book_item.appendChild(book_author);
             book_item.appendChild(book_year);
-            book_item.id = "Item-"+book.id;
+            book_item.id = book.id;
 
             finished_list.appendChild(book_item); 
             
@@ -155,20 +156,52 @@ submit_book_data.addEventListener('submit', function (event) {
     const input_title = document.getElementById('input_title').value;
     const input_author = document.getElementById('input_author').value;
     const input_year = document.getElementById('input_year').value;
-    const input_is_complete = document.getElementById('input_is_complete').checked;
+    const input_isComplete = document.getElementById('input_isComplete').checked;
     const date = new Date();
     
     const new_book_data = {
-        id: date.toUTCString(),
+        id: parseInt(date.getTime()),
         title: input_title,
         author: input_author,
-        year: input_year,
-        completed: input_is_complete,
+        year: parseInt(input_year),
+        iscomplete: input_isComplete,
     }
     
     add_book_data(new_book_data);
     render_book_list();
 });
+
+search_book_data.addEventListener('submit', function (event) {
+    event.preventDefault();
+    const search_book_title = document.getElementById('search_form').value;
+
+    search_book(search_book_title);
+});
+
+search_book_data.addEventListener('input', function (event) {
+    event.preventDefault();
+    const search_book_title = document.getElementById('search_form').value;
+
+    search_book(search_book_title);
+});
+
+function search_book(book_title){
+    if (check_for_storage()) { 
+        let book_data = [];
+        if (localStorage.getItem(storage_key) !== null) {
+            book_data = JSON.parse(localStorage.getItem(storage_key));
+            if (book_data.findIndex(item => item.title == book_title) !== -1){
+
+                const index = book_data.findIndex(item => item.title == book_title);
+
+                document.getElementById(book_data[index].id).scrollIntoView(true);
+                console.log(book_data[index].id);
+            }
+            localStorage.setItem(storage_key, JSON.stringify(book_data));
+        }
+    }
+}
+
 
 window.addEventListener('load', function () {
     if (check_for_storage) {
