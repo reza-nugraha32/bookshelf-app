@@ -40,11 +40,11 @@ function move_book_data(move_id){
             book_data = JSON.parse(localStorage.getItem(storage_key));
             const index = book_data.findIndex(item => item.id == move_id);
 
-            if (book_data[index].iscomplete == true){
-                book_data[index].iscomplete = false;
+            if (book_data[index].isComplete == true){
+                book_data[index].isComplete = false;
             }
             else{
-                book_data[index].iscomplete = true;
+                book_data[index].isComplete = true;
             }
             localStorage.setItem(storage_key, JSON.stringify(book_data));
         }
@@ -71,7 +71,7 @@ function render_control_button(book){
         render_book_list();
     };
 
-    if (book.iscomplete !== true){
+    if (book.isComplete !== true){
         move_button.innerHTML = 'Move to finished reading';
     }
     else{
@@ -120,7 +120,7 @@ function render_book_list() {
     finished_list.innerHTML = '';
 
     for (let book of book_data) {
-        if (book.iscomplete !== true){
+        if (book.isComplete !== true){
             let book_item = document.createElement('article');
             let book_title = document.createElement('h3');
             let book_author = document.createElement('p');
@@ -182,7 +182,7 @@ submit_book_data.addEventListener('submit', function (event) {
         title: input_title,
         author: input_author,
         year: parseInt(input_year),
-        iscomplete: input_isComplete,
+        isComplete: input_isComplete,
     }
     
     add_book_data(new_book_data);
