@@ -27,7 +27,7 @@ function delete_book_data(delete_id){
             book_data = JSON.parse(localStorage.getItem(storage_key));
         }
 
-        const index = book_data.findIndex(item => item.id === delete_id)
+        const index = book_data.findIndex(item => item.id == delete_id)
         book_data.splice(index, 1);
         localStorage.setItem(storage_key, JSON.stringify(book_data));
     }
