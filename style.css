@@ -23,6 +23,20 @@ button{
 .fa{
     margin: 0 0.5rem 0 0;
 }
+::backdrop {
+    backdrop-filter: blur(20px);
+    margin: auto auto auto auto;
+}
+dialog{
+    border: none;
+    background-color:#fffbf7;
+    border: none;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 1px 1px 30px 0px #a7985280;
+    -moz-box-shadow: 1px 1px 30px 0px #a7985280;
+    box-shadow: 1px 1px 30px 0px #a7985280;
+    padding: 2rem 2rem 2rem 2rem;
+}
 .navbar{
     align-items: center;
     background-color: beige;
@@ -79,9 +93,9 @@ main{
     background-color:#fffbf7;
     border: none;
     border-radius: 0.5rem;
-    -webkit-box-shadow: 1px 1px 20px 0px #a7985260;
-    -moz-box-shadow: 1px 1px 20px 0px #a7985260;
-    box-shadow: 1px 1px 20px 0px #a7985260;
+    -webkit-box-shadow: 1px 1px 30px 0px #a7985280;
+    -moz-box-shadow: 1px 1px 30px 0px #a7985280;
+    box-shadow: 1px 1px 30px 0px #a7985280;
     margin: 2rem auto 2rem auto;
     max-width: 60rem;
     padding: 2rem 2rem 2rem 2rem;

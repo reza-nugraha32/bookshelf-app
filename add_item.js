@@ -82,8 +82,24 @@ function render_control_button(book){
     delete_button.id = book.id;
     delete_button.className = 'delete_button';
     delete_button.onclick = function(){
-        delete_book_data(this.id);
-        render_book_list();
+        delete_id = this.id;
+        
+        const dialog = document.querySelector("dialog");
+        const close_dialog_button = document.querySelector("dialog button");
+        const confirm_delete_button = document.getElementById("confirm_delete")
+
+        dialog.showModal();
+
+        close_dialog_button.addEventListener("click", () => {
+            dialog.close();
+        });
+
+        confirm_delete_button.addEventListener("click", () => {
+            delete_book_data(delete_id);
+            dialog.close();
+            
+            render_book_list();
+        });
     };
     delete_button.innerHTML = 'Delete';
 
@@ -92,6 +108,8 @@ function render_control_button(book){
     
     return action_div;
 }
+
+
 
 function render_book_list() {
     const book_data = get_book_data();
